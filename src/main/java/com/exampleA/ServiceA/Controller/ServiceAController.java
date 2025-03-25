@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/ServiceA")
+@RequestMapping("/api/Servicea")
 public class ServiceAController {
     @GetMapping("/data")
     public ResponseEntity<String>getData(){
