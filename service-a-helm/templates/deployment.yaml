@@ -33,9 +33,6 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       containers:
-        - env:
-            - name: PORT
-              value: {{ .Values.service.targetPort}}
         - name: {{ .Chart.Name }}
           {{- with .Values.securityContext }}
           securityContext:
