@@ -35,7 +35,7 @@ spec:
       containers:
         - env:
             - name: PORT
-              value: {{ .Values.env.PORT }}
+              value: {{ .Values.serivce.port }}
         - name: {{ .Chart.Name }}
           {{- with .Values.securityContext }}
           securityContext:
