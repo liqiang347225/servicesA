@@ -35,7 +35,7 @@ spec:
       containers:
         - env:
             - name: PORT
-              value: {{ .Values.serivce.targetPort }}
+              value: {{.Values.service.targetPort}}
         - name: {{ .Chart.Name }}
           {{- with .Values.securityContext }}
           securityContext:
@@ -45,7 +45,7 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
-              containerPort: {{ .Values.service.targetPort}}
+              containerPort: {{.Values.service.targetPort}}
               protocol: TCP
           {{- with .Values.livenessProbe }}
           livenessProbe:
