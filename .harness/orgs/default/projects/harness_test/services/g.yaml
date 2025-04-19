@@ -1,0 +1,22 @@
+service:
+  name: gke
+  identifier: gke
+  serviceDefinition:
+    type: Kubernetes
+    spec:
+      manifests:
+        - manifest:
+            identifier: k8sdeploy
+            type: DeploymentRepo
+            spec:
+              store:
+                type: Github
+                spec:
+                  connectorRef: ccagitconnectorservicea
+                  gitFetchType: Branch
+                  paths:
+                    - /service-a-helm/templates
+                  branch: main
+  gitOpsEnabled: true
+  orgIdentifier: default
+  projectIdentifier: harness_test
