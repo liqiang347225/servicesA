@@ -1,0 +1,22 @@
+service:
+  name: test
+  identifier: test
+  serviceDefinition:
+    type: Kubernetes
+    spec:
+      manifests:
+        - manifest:
+            identifier: k8s
+            type: ReleaseRepo
+            spec:
+              store:
+                type: Github
+                spec:
+                  connectorRef: ccagitconnectorservicea
+                  gitFetchType: Branch
+                  paths:
+                    - /service-a-helm/templates/
+                  branch: main
+  gitOpsEnabled: true
+  orgIdentifier: default
+  projectIdentifier: harness_test
